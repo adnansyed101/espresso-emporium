@@ -23,7 +23,10 @@ const coffeeSchema = new Schema({
     type: String,
     required: true,
   },
-  category: mongoose.SchemaTypes.ObjectId,
+  category: {
+    type: String,
+    required: true,
+  },
 });
 
 const Coffee = mongoose.model("coffee", coffeeSchema);
