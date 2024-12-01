@@ -1,9 +1,13 @@
 import express from "express";
-import { createCoffee } from "../controllers/coffee.controller.js";
+import { createCoffee, getCoffees } from "../controllers/coffee.controller.js";
 
 const router = express.Router();
 
-// Create New Product
+// Get all coffees
+router.get("/", getCoffees);
+
+// Create New Coffee
 router.post("/", createCoffee);
+
 
 export default router;
