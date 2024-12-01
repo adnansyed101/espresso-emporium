@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 const Schema = mongoose.Schema;
 
@@ -24,11 +24,12 @@ const coffeeSchema = new Schema({
     required: true,
   },
   category: {
-    type: String,
+    type: mongoose.SchemaTypes.ObjectId,
     required: true,
+    ref: "Category",
   },
 });
 
-const Coffee = mongoose.model("coffee", coffeeSchema);
+const Coffee = mongoose.model("Coffee", coffeeSchema);
 
 export default Coffee;
